@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: service-example-1
+spec:
+  rules:
+  - http:
+      paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: web-index-service
+              port:
+                number: 80
+        - pathType: Prefix
+          path: "/payment"
+          backend:
+            service:
+              name: web-payment-service
+              port:
+                number: 81

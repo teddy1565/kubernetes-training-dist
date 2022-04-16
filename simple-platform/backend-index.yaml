@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web-index
+  labels:
+    app: web-index
+    tier: backend
+spec:
+  containers:
+    - name: web-server
+      image: teddy1565/kubernetes-demo-backend-index-01:latest
+      ports:
+        - containerPort: 3000

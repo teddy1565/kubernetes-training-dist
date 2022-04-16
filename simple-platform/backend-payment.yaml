@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web-payment
+  labels:
+    app: web-payment
+    tier: backend
+spec:
+  containers:
+    - name: payment-app
+      image: teddy1565/kubernetes-demo-backend-payment-01
+      ports:
+        - containerPort: 3000
